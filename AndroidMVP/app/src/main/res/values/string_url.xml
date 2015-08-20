@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_id">q27nkZnG7EwIBZpu4ElO2S5YcBEKikn9xfmxAzT8</string>
+    <string name="rest_key">H7f0mZTNju0ln9jO2igL2ECv3ttE0S3PFNZ0FlOP</string>
+    <string name="url_login">https://api.parse.com/1/login</string>
+    <string name="url_user">https://api.parse.com/1/users</string>
+    <string name="url_product">https://api.parse.com/1/classes/Producto</string>
+</resources>
