@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">ExampleRest</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="app_name">ExampleMVP</string>
+    <string name="hello_world">ExampleMVP</string>
+    <string name="action_settings">ExampleMVP</string>
+    <string name="title_activity_home">ExampleMVP</string>
+    <string name="title_activity_main">ExampleMVP</string>
+    <string name="hello_blank_fragment">ExampleMVP</string>
+    <string name="title_activity_sign_in">ExampleMVP</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.isil.androidmvp;
+package com.emedinaa.androidmvp;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -19,7 +19,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.isil.androidmvp.model.entity.response.LoginResponse;
+import com.emedinaa.androidmvp.model.entity.response.LoginResponse;
 
 import org.json.JSONObject;
 

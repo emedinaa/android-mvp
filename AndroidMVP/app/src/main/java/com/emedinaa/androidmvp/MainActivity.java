@@ -1,7 +1,6 @@
-package com.isil.androidmvp;
+package com.emedinaa.androidmvp;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,10 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
-import com.isil.androidmvp.view.fragments.MainFragment;
-import com.isil.androidmvp.view.listeners.OnFragmentListener;
+import com.emedinaa.androidmvp.view.fragments.MainFragment;
+import com.emedinaa.androidmvp.view.listeners.OnFragmentListener;
 
 
 public class MainActivity extends ActionBarActivity implements OnFragmentListener {

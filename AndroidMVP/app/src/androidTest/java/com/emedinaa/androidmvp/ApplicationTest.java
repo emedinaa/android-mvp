@@ -1,4 +1,4 @@
-package com.isil.androidmvp;
+package com.emedinaa.androidmvp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

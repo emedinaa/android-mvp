@@ -1,4 +1,4 @@
-package com.isil.androidmvp;
+package com.emedinaa.androidmvp;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -17,8 +17,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.isil.androidmvp.model.entity.UserEntity;
-import com.isil.androidmvp.model.entity.request.SignInRequest;
+import com.emedinaa.androidmvp.model.entity.UserEntity;
+import com.emedinaa.androidmvp.model.entity.request.SignInRequest;
 
 import org.json.JSONObject;
 

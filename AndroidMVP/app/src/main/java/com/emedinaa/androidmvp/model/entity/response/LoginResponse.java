@@ -1,4 +1,4 @@
-package com.isil.androidmvp.model.entity.response;
+package com.emedinaa.androidmvp.model.entity.response;
 
 import java.io.Serializable;
 
