@@ -6,4 +6,9 @@
     <string name="title_activity_main">ExampleMVP</string>
     <string name="hello_blank_fragment">ExampleMVP</string>
     <string name="title_activity_sign_in">ExampleMVP</string>
+    <string name="password">Password</string>
+    <string name="enviar">Enviar</string>
+    <string name="registrar">Registrar</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="msg_ingresar">Ingresar este campo</string>
 </resources>

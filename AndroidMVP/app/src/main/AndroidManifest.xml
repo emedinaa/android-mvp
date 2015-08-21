@@ -24,11 +24,6 @@
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait">
         </activity>
-        <activity
-            android:name=".SignInActivity"
-            android:label="@string/title_activity_sign_in"
-            android:screenOrientation="portrait">
-        </activity>
     </application>
 
 </manifest>
