@@ -1,4 +1,4 @@
-package com.emedinaa.androidmvp.model.entity.request;
+package com.emedinaa.androidmvp.data.entity.request;
 
 import java.io.Serializable;
 

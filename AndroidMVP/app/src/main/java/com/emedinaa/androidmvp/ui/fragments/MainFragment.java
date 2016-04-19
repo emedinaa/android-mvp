@@ -1,4 +1,4 @@
-package com.emedinaa.androidmvp.view.fragments;
+package com.emedinaa.androidmvp.ui.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.emedinaa.androidmvp.R;
-import com.emedinaa.androidmvp.view.listeners.OnFragmentListener;
+import com.emedinaa.androidmvp.ui.listeners.OnFragmentListener;
 
 
 /**

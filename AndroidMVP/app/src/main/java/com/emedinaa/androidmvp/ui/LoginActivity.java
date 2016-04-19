@@ -1,33 +1,18 @@
-package com.emedinaa.androidmvp;
+package com.emedinaa.androidmvp.ui;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import com.emedinaa.androidmvp.R;
 import com.emedinaa.androidmvp.presenter.LoginPresenter;
 import com.emedinaa.androidmvp.view.LoginView;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.emedinaa.androidmvp.model.entity.response.LoginResponse;
-
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class LoginActivity extends ActionBarActivity  implements LoginView{
@@ -124,8 +109,18 @@ public class LoginActivity extends ActionBarActivity  implements LoginView{
         //TODO mostrar mensaje de Error
     }
 
+    @Override
+    public void showLoading() {
+        vLoading.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideLoading() {
+        vLoading.setVisibility(View.GONE);
+    }
+
     private void gotoHome() {
-        startActivity(new Intent(this,MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 

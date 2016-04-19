@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        devel {
+            buildConfigField 'String', 'HOST', '"http://api.backendless.com"'
+        }
+    }
 }
 
 dependencies {

@@ -1,4 +1,4 @@
-package com.emedinaa.androidmvp;
+package com.emedinaa.androidmvp.ui;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
@@ -9,8 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.emedinaa.androidmvp.view.fragments.MainFragment;
-import com.emedinaa.androidmvp.view.listeners.OnFragmentListener;
+import com.emedinaa.androidmvp.R;
+import com.emedinaa.androidmvp.ui.fragments.MainFragment;
+import com.emedinaa.androidmvp.ui.listeners.OnFragmentListener;
 
 
 public class MainActivity extends ActionBarActivity implements OnFragmentListener {

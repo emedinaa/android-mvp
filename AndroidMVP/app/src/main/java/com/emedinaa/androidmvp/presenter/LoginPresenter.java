@@ -1,7 +1,6 @@
 package com.emedinaa.androidmvp.presenter;
 
 import android.util.Log;
-import android.view.View;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -11,7 +10,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.emedinaa.androidmvp.R;
-import com.emedinaa.androidmvp.model.entity.response.LoginResponse;
+import com.emedinaa.androidmvp.data.entity.response.LoginResponse;
 import com.emedinaa.androidmvp.view.LoginView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,7 +23,7 @@ import java.util.Map;
 /**
  * Created by emedinaa on 21/08/15.
  */
-public class LoginPresenter {
+public class LoginPresenter implements Presenter<LoginView>{
 
     private static final String TAG ="LoginPresenter" ;
     private LoginView loginView;
@@ -98,5 +97,15 @@ public class LoginPresenter {
     public void login(Object object)
     {
 
+    }
+
+    @Override
+    public void addView(LoginView view) {
+        this.loginView= view;
+    }
+
+    @Override
+    public void removeView() {
+        this.loginView=null;
     }
 }

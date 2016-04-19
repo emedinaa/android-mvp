@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by emedinaa on 19/05/2015.
  */
-public class UserEntity implements Serializable {
+public class User implements Serializable {
 
     private String username,name, lastname,password,email;
     private String objectId;
@@ -69,7 +69,7 @@ public class UserEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "UserEntity{" +
+        return "User{" +
                 "username='" + username + '\'' +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +

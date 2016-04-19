@@ -1,4 +1,4 @@
-package com.emedinaa.androidmvp.view.listeners;
+package com.emedinaa.androidmvp.ui.listeners;
 
 /**
  * Created by emedinaa on 19/05/15.

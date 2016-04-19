@@ -1,4 +1,4 @@
-package com.emedinaa.perutravel.presentation.presenter;
+package com.emedinaa.androidmvp.presenter;
 
 /**
  * Created by emedinaa on 16/04/16.
@@ -6,5 +6,5 @@ package com.emedinaa.perutravel.presentation.presenter;
 public interface Presenter<T> {
 
     void addView(T view);
-    void removeView(T view);
+    void removeView();
 }
