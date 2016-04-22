@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by emedinaa on 19/05/2015.
  */
-public class SignInRequest implements Serializable{
+public class SignInRequest{
 
     private String username,name, lastname,password,email;
 

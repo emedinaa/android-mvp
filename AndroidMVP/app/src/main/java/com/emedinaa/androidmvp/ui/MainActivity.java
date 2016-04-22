@@ -8,24 +8,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.emedinaa.androidmvp.R;
-import com.emedinaa.androidmvp.ui.fragments.MainFragment;
+import com.emedinaa.androidmvp.model.entity.User;
 import com.emedinaa.androidmvp.ui.listeners.OnFragmentListener;
 
 
 public class MainActivity extends ActionBarActivity implements OnFragmentListener {
 
-    private MainFragment mainFragment= MainFragment.newInstance(null,null);
+    private TextView tviUsername;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, mainFragment)
-                    .commit();
+        extras();
+
+        tviUsername= (TextView)findViewById(R.id.tviUsername);
+        tviUsername.setText("Bienvenido " + "");
+    }
+
+    private void extras() {
+
+        if (getIntent() != null) {
+            Bundle bundle = getIntent().getExtras();
+            if (bundle != null) {
+                user= (User)bundle.getSerializable("ENTITY");
+            }
         }
     }
 
@@ -40,19 +51,5 @@ public class MainActivity extends ActionBarActivity implements OnFragmentListene
         return false;
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
 
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
-    }
 }

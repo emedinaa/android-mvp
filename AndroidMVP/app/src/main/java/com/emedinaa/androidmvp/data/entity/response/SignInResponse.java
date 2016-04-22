@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by emedinaa on 19/05/2015.
  */
-public class SignInResponse implements Serializable {
+public class SignInResponse  {
     /*
     {"objectId":"17CnDWgxb5","createdAt":"2015-05-20T00:57:24.596Z"}
      */

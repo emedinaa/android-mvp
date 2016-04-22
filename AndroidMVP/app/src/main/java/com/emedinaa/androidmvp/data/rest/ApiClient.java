@@ -2,6 +2,8 @@ package com.emedinaa.androidmvp.data.rest;
 
 
 import com.emedinaa.androidmvp.BuildConfig;
+import com.emedinaa.androidmvp.data.entity.LogInRaw;
+import com.emedinaa.androidmvp.data.entity.response.LoginResponse;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.util.concurrent.TimeUnit;
@@ -9,8 +11,10 @@ import java.util.concurrent.TimeUnit;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.client.OkClient;
+import retrofit.http.Body;
 import retrofit.http.GET;
 import retrofit.http.Headers;
+import retrofit.http.POST;
 
 /**
  * Created by emedinaa on 16/04/16.
@@ -37,15 +41,15 @@ public class ApiClient {
 
     public interface ServicesApiInterface {
 
-        /*@Headers({
+        @Headers({
                 "Content-Type: application/json",
-                "application-id: DA9284B5-938D-38A8-FFB5-ED28F8E07A00",
-                "secret-key: 513FB962-5397-99F4-FF6D-F56D4FAF9B00",
+                "application-id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx",
+                "secret-key: xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
                 "application-type: REST"
         })
-        //
-        @GET("/v1/data/Place")
-        void places(Callback<PlaceResponse> callback);*/
+
+        @POST("/v1/users/login")
+        void login(@Body LogInRaw raw, Callback<LoginResponse> callback);
     }
 
     private static OkHttpClient getClient() {

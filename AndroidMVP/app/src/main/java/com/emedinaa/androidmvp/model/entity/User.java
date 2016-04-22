@@ -10,6 +10,7 @@ public class User implements Serializable {
     private String username,name, lastname,password,email;
     private String objectId;
     private String createdAt;
+    private String token;
 
     public String getUsername() {
         return username;
@@ -67,16 +68,11 @@ public class User implements Serializable {
         this.createdAt = createdAt;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", objectId='" + objectId + '\'' +
-                ", createdAt='" + createdAt + '\'' +
-                '}';
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

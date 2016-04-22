@@ -1,32 +1,56 @@
 package com.emedinaa.androidmvp.data.entity.response;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
  * Created by emedinaa on 19/05/15.
  */
-public class LoginResponse implements Serializable {
+public class LoginResponse extends BaseResponse {
 
-    /*{
-        "createdAt": "2015-05-19T20:11:22.931Z",
-            "objectId": "fSVL0hhKgc",
-            "sessionToken": "r:PxcekgeZiG3afFZGArdZdQ54w",
-            "updatedAt": "2015-05-19T20:30:00.793Z",
-            "username": "emedinaa"
-    }*/
+    private String name;
 
-    private  String createdAt;
-    private  String objectId;
-    private  String sessionToken;
-    private  String updatedAt;
-    private  String username;
+    @SerializedName("___class")
+    private String type;
 
-    public String getCreatedAt() {
-        return createdAt;
+    @SerializedName("user-token")
+    private String token;
+
+    private String email;
+
+    private String objectId;
+
+    public String getName() {
+        return name;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getObjectId() {
@@ -35,40 +59,5 @@ public class LoginResponse implements Serializable {
 
     public void setObjectId(String objectId) {
         this.objectId = objectId;
-    }
-
-    public String getSessionToken() {
-        return sessionToken;
-    }
-
-    public void setSessionToken(String sessionToken) {
-        this.sessionToken = sessionToken;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public String toString() {
-        return "LoginResponse{" +
-                "createdAt='" + createdAt + '\'' +
-                ", objectId='" + objectId + '\'' +
-                ", sessionToken='" + sessionToken + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", username='" + username + '\'' +
-                '}';
     }
 }

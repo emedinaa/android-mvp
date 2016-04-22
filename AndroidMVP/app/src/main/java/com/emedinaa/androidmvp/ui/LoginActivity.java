@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 
 
 import com.emedinaa.androidmvp.R;
+import com.emedinaa.androidmvp.model.entity.User;
 import com.emedinaa.androidmvp.presenter.LoginPresenter;
 import com.emedinaa.androidmvp.view.LoginView;
 
@@ -48,16 +50,11 @@ public class LoginActivity extends ActionBarActivity  implements LoginView{
             public void onClick(View view) {
 
                 if (validate()) {
-                    login();
+                    logIn();
                 }
             }
         });
-        tviSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotoSignIn();
-            }
-        });
+
     }
 
     private boolean validate() {
@@ -80,34 +77,12 @@ public class LoginActivity extends ActionBarActivity  implements LoginView{
         return true;
     }
 
-    private void gotoSignIn() {
 
-    }
-
-    private void login()
+    private void logIn()
     {
-        showLoading(true);
-        loginPresenter.login(username,password);
+        loginPresenter.login(username, password);
     }
 
-    @Override
-    public void showLoading(boolean state) {
-        int visibility= (state)?(View.VISIBLE):(View.GONE);
-        vLoading.setVisibility(visibility);
-    }
-
-    @Override
-    public void onRequestSuccess(Object object) {
-        showLoading(false);
-        gotoHome();
-    }
-
-
-    @Override
-    public void onRequestError(Object object) {
-        showLoading(false);
-        //TODO mostrar mensaje de Error
-    }
 
     @Override
     public void showLoading() {
@@ -119,8 +94,22 @@ public class LoginActivity extends ActionBarActivity  implements LoginView{
         vLoading.setVisibility(View.GONE);
     }
 
-    private void gotoHome() {
-        startActivity(new Intent(this, MainActivity.class));
+    @Override
+    public void gotoMain(User user) {
+        Bundle bundle= new Bundle();
+        bundle.putSerializable("ENTITY",user);
+        next(bundle);
+    }
+
+    @Override
+    public void showMessageError(String message) {
+        Log.v(TAG, " error " + message);
+    }
+
+    private void next(Bundle bundle) {
+        Intent intent= new Intent(this, MainActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
         finish();
     }
 
