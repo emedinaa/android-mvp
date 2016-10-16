@@ -1,21 +1,10 @@
 package com.emedinaa.androidmvp.presenter;
 
-import android.util.Log;
-
-import com.emedinaa.androidmvp.R;
-import com.emedinaa.androidmvp.data.entity.response.LoginResponse;
 import com.emedinaa.androidmvp.data.mapper.UserDataMapper;
 import com.emedinaa.androidmvp.model.entity.User;
 import com.emedinaa.androidmvp.model.interactor.LogInCallback;
 import com.emedinaa.androidmvp.model.interactor.LogInInteractor;
 import com.emedinaa.androidmvp.view.LoginView;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by emedinaa on 21/08/15.
@@ -26,13 +15,16 @@ public class LoginPresenter implements Presenter<LoginView>,LogInCallback{
     private LoginView loginView;
     private LogInInteractor logInInteractor;
 
-    public LoginPresenter(LoginView loginView) {
-        this.loginView = loginView;
-        logInInteractor= new LogInInteractor(new UserDataMapper());
+    public LoginPresenter() {
     }
 
-    public void login(String email, String password)
+    public void login()
     {
+        if(!loginView.validate())return;
+
+        String email= loginView.getUserName();
+        String password= loginView.getPassword();
+
         loginView.showLoading();
         logInInteractor.logIn(email,password,this);
     }
@@ -41,6 +33,7 @@ public class LoginPresenter implements Presenter<LoginView>,LogInCallback{
     @Override
     public void addView(LoginView view) {
         this.loginView= view;
+        logInInteractor= new LogInInteractor(new UserDataMapper());
     }
 
     @Override
@@ -58,6 +51,8 @@ public class LoginPresenter implements Presenter<LoginView>,LogInCallback{
 
     @Override
     public void onLogInError(Object object) {
+        String message= object.toString();
         loginView.hideLoading();
+        loginView.showMessageError(message);
     }
 }

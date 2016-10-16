@@ -20,7 +20,9 @@ android {
 
     productFlavors {
         devel {
-            buildConfigField 'String', 'HOST', '"http://api.backendless.com"'
+            //https://blooming-sierra-86800.herokuapp.com/api/todos
+            //buildConfigField 'String', 'HOST', '"http://api.backendless.com"'
+            buildConfigField 'String', 'HOST', '"https://blooming-sierra-86800.herokuapp.com"'
         }
     }
 }

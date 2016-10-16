@@ -1,7 +1,6 @@
 package com.emedinaa.androidmvp.model.interactor;
 
-import com.emedinaa.androidmvp.data.entity.LogInRaw;
-import com.emedinaa.androidmvp.data.entity.UserEntity;
+import com.emedinaa.androidmvp.data.entity.request.LogInRaw;
 import com.emedinaa.androidmvp.data.entity.response.LoginResponse;
 import com.emedinaa.androidmvp.data.mapper.UserDataMapper;
 import com.emedinaa.androidmvp.data.rest.ApiClient;
@@ -25,23 +24,22 @@ public class LogInInteractor {
     public void logIn(String email, String password,final LogInCallback logInCallback)
     {
         LogInRaw logInRaw= new LogInRaw();
-        logInRaw.setLogin(email);
+        logInRaw.setUsername(email);
         logInRaw.setPassword(password);
+
         ApiClient.getMyApiClient().login(logInRaw, new Callback<LoginResponse>() {
             @Override
             public void success(LoginResponse loginResponse, Response response) {
                 if(loginResponse!=null){
-                    User user= userDataMapper.transform(loginResponse);
+                    User user= userDataMapper.transformResponse(loginResponse);
                     logInCallback.onLogInSuccess(user);
                 }else{
-                    logInCallback.onLogInError(null);
+                    logInCallback.onLogInError("an error occurred...");
                 }
-
             }
 
             @Override
             public void failure(RetrofitError error) {
-
                 String message= "";
                 if(error!=null)message= error.getMessage();
                 logInCallback.onLogInError(message);

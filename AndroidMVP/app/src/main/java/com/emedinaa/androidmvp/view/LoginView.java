@@ -1,7 +1,5 @@
 package com.emedinaa.androidmvp.view;
 
-import android.content.Context;
-
 import com.emedinaa.androidmvp.model.entity.User;
 
 /**
@@ -9,10 +7,11 @@ import com.emedinaa.androidmvp.model.entity.User;
  */
 public interface LoginView  extends BaseView{
 
-
     void showLoading();
     void hideLoading();
+    boolean validate();
     void gotoMain(User user);
     void showMessageError(String message);
-
+    String getUserName();
+    String getPassword();
 }

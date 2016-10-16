@@ -1,23 +1,16 @@
 package com.emedinaa.androidmvp.ui;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.emedinaa.androidmvp.R;
 import com.emedinaa.androidmvp.model.entity.User;
-import com.emedinaa.androidmvp.ui.listeners.OnFragmentListener;
+import butterknife.Bind;
 
 
-public class MainActivity extends ActionBarActivity implements OnFragmentListener {
+public class MainActivity extends FormActivity {
 
-    private TextView tviUsername;
+    @Bind(R.id.tviUsername)
+    TextView tviUsername;
+
     private User user;
 
     @Override
@@ -25,31 +18,20 @@ public class MainActivity extends ActionBarActivity implements OnFragmentListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         extras();
+        injectView();
+        ui();
+    }
 
-        tviUsername= (TextView)findViewById(R.id.tviUsername);
-        tviUsername.setText("Bienvenido " + "");
+    private void ui() {
+        tviUsername.setText("Welcome " + user.getFirstname()+" "+user.getLastname());
     }
 
     private void extras() {
-
         if (getIntent() != null) {
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
-                user= (User)bundle.getSerializable("ENTITY");
+                user= (User)bundle.getParcelable("ENTITY");
             }
         }
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return false;
-    }
-
-
 }

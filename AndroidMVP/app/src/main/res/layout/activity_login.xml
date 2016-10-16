@@ -1,14 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"  tools:context=".HomeActivity">
-
-
+    android:layout_height="match_parent"  tools:context=".LoginActivity"
+    android:id="@+id/container">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp">
 
         <EditText
             android:layout_width="fill_parent"
@@ -17,7 +16,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:hint="@string/username_tmp"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:layout_marginTop="147dp" />
 
         <EditText
@@ -27,6 +26,7 @@
             android:layout_below="@+id/editText"
             android:inputType="textPassword"
             android:hint="@string/password_tmp"
+            android:imeOptions="actionDone"
             android:layout_marginBottom="20dp"/>
 
         <Button
@@ -35,20 +35,8 @@
             android:id="@+id/btnLogin"
             android:text="Enviar" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Registrar"
-            android:id="@+id/tviSignIn"
-            android:textSize="18sp"
-            android:autoLink="none"
-            android:layout_below="@+id/linearLayout"
-            android:gravity="center"
-            android:layout_marginTop="58dp" />
 
     </LinearLayout>
-
-
     <FrameLayout
         android:id="@+id/vLoading"
         android:layout_width="fill_parent"
@@ -62,6 +50,5 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
     </FrameLayout>
-
 
 </RelativeLayout>

@@ -4,31 +4,37 @@ package com.emedinaa.androidmvp.data.entity.response;
  * Created by em on 22/04/16.
  */
 public class BaseResponse {
-
-    private static final int SUCCESS=0;
-    private int code;
-    private String message;
+    /*
+        {
+          "msg": "success",
+          "status": 200,
+          "data":{}
+        }
+    */
+    private static final int SUCCESS=200;
+    private String msg;
+    private int status;
 
 
     public boolean isSuccess()
     {
-        if(this.code==SUCCESS)return true;
+        if(this.status==SUCCESS)return true;
         return false;
     }
 
-    public int getCode() {
-        return this.code;
+    public int getStatus() {
+        return status;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
-    public String getMessage() {
-        return this.message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

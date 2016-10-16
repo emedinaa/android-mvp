@@ -9,23 +9,24 @@ import com.emedinaa.androidmvp.model.entity.User;
  */
 public class UserDataMapper {
 
-    public User transform(UserEntity userEntity)
+    private User transform(UserEntity userEntity)
     {
         User user= new User();
+        if(userEntity==null) return user;
+
+        user.setId(userEntity.getId());
+        user.setUsername(userEntity.getUsername());
+        user.setFirstname(userEntity.getFirstname());
+        user.setLastname(userEntity.getLastname());
+
         return user;
     }
 
-
-    public User transform(LoginResponse loginResponse)
+    public User transformResponse(LoginResponse loginResponse)
     {
         User user= new User();
-        if(loginResponse!=null)
-        {
-            user.setEmail(loginResponse.getEmail());
-            user.setName(loginResponse.getName());
-            user.setObjectId(loginResponse.getObjectId());
-            user.setToken(loginResponse.getToken());
-        }
+        if(loginResponse==null)return user;
+        user= transform(loginResponse.getData());
         return user;
     }
 }
