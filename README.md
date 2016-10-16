@@ -1,6 +1,10 @@
 # android-mvp
 Ejemplo de como implementar el Patrón MVP ( Model- View - Presenter) en Android
 
+ <img src="https://github.com/emedinaa/android-mvp/blob/master/modelviewpresenter.png" height="480">
+
+Ejemplo :
+
  <img src="https://github.com/emedinaa/android-mvp/blob/master/screenshot_app.png" height="480">
  <img src="https://github.com/emedinaa/android-mvp/blob/master/screenshot_app2.png" height="480">
 
