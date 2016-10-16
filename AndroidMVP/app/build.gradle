@@ -20,7 +20,6 @@ android {
 
     productFlavors {
         devel {
-            //https://blooming-sierra-86800.herokuapp.com/api/todos
             //buildConfigField 'String', 'HOST', '"http://api.backendless.com"'
             buildConfigField 'String', 'HOST', '"https://blooming-sierra-86800.herokuapp.com"'
         }
@@ -41,9 +40,6 @@ dependencies {
 
     //GSON https://github.com/google/gson
     compile 'com.google.code.gson:gson:2.6.2'
-
-    //GLIDE https://github.com/bumptech/glide
-    compile 'com.github.bumptech.glide:glide:3.7.0'
 
     //OKHTTP
     compile 'com.squareup.okhttp:okhttp:2.5.0'
