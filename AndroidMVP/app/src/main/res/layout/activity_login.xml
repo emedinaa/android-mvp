@@ -7,33 +7,36 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:padding="4dp">
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/eteUsername"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:hint="@string/username_tmp"
             android:inputType="textEmailAddress"
-            android:layout_marginTop="147dp" />
+            android:id="@+id/eteUsername"/>
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etePassword"
             android:layout_below="@+id/editText"
             android:inputType="textPassword"
             android:hint="@string/password_tmp"
             android:imeOptions="actionDone"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:id="@+id/etePassword"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnLogin"
-            android:text="Enviar" />
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:text="Enviar"
+            android:textStyle="bold"
+            android:id="@+id/btnLogin"/>
 
 
     </LinearLayout>

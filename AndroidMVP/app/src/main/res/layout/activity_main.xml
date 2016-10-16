@@ -1,12 +1,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"  tools:context=".ui.MainActivity">
+    android:layout_height="match_parent"  tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tviUsername"
-        android:text="@string/hello_world"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/hello_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="4dp"
+            android:id="@+id/tviUsername"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_below="@+id/tviUsername"
+            android:src="@mipmap/ic_android"/>
+    </LinearLayout>
+
 
 </RelativeLayout>
