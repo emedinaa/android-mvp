@@ -27,7 +27,6 @@ public class LoginActivity extends FormActivity implements LoginView{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        injectView();
         loginPresenter= new LoginPresenter();
         loginPresenter.addView(this);
         ui();
@@ -125,9 +124,10 @@ public class LoginActivity extends FormActivity implements LoginView{
         return password;
     }
 
+    /*
     @Override
     public Context getContext() {
         return this;
-    }
+    }*/
 
 }

@@ -1,20 +1,23 @@
 package com.emedinaa.androidmvp.model.interactor;
 
+import android.util.Log;
+
 import com.emedinaa.androidmvp.data.entity.request.LogInRaw;
 import com.emedinaa.androidmvp.data.entity.response.LoginResponse;
 import com.emedinaa.androidmvp.data.mapper.UserDataMapper;
 import com.emedinaa.androidmvp.data.rest.ApiClient;
 import com.emedinaa.androidmvp.model.entity.User;
 
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by em on 22/04/16.
  */
 public class LogInInteractor {
 
+    private static final String TAG = "LogInInteractor";
     private final UserDataMapper userDataMapper;
 
     public LogInInteractor(UserDataMapper userDataMapper) {
@@ -27,7 +30,32 @@ public class LogInInteractor {
         logInRaw.setUsername(email);
         logInRaw.setPassword(password);
 
-        ApiClient.getMyApiClient().login(logInRaw, new Callback<LoginResponse>() {
+        Call<LoginResponse> call = ApiClient.getMyApiClient().login(logInRaw);
+        call.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                if(response.isSuccessful()){
+                    LoginResponse loginResponse= response.body();
+                    User user= userDataMapper.transformResponse(loginResponse);
+                    logInCallback.onLogInSuccess(user);
+                }else {
+                    logInCallback.onLogInError("an error occurred...");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                String json="Error ";
+                try {
+                    json= new StringBuffer().append(t.getMessage()).toString();
+                }catch (NullPointerException e) {}
+                Log.v(TAG, "json >>>> " + json);
+
+                logInCallback.onLogInError(json);
+            }
+        });
+
+        /*ApiClient.getMyApiClient().login(logInRaw, new Callback<LoginResponse>() {
             @Override
             public void success(LoginResponse loginResponse, Response response) {
                 if(loginResponse!=null){
@@ -44,6 +72,6 @@ public class LogInInteractor {
                 if(error!=null)message= error.getMessage();
                 logInCallback.onLogInError(message);
             }
-        });
+        });*/
     }
 }

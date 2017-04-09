@@ -8,14 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import butterknife.ButterKnife;
-
 public class FormActivity extends AppCompatActivity {
 
-    protected void injectView()
+    /*protected void injectView()
     {
         ButterKnife.bind(this);
-    }
+    }*/
     protected void showMessage(View container, String message)
     {
         Snackbar snackbar = Snackbar

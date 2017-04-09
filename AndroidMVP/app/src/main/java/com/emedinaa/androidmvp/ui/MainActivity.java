@@ -3,14 +3,12 @@ package com.emedinaa.androidmvp.ui;
 import android.os.Bundle;
 import android.widget.TextView;
 import com.emedinaa.androidmvp.model.entity.User;
-import butterknife.Bind;
+
 
 
 public class MainActivity extends FormActivity {
 
-    @Bind(R.id.tviUsername)
-    TextView tviUsername;
-
+    private TextView tviUsername;
     private User user;
 
     @Override
@@ -18,11 +16,11 @@ public class MainActivity extends FormActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         extras();
-        injectView();
         ui();
     }
 
     private void ui() {
+        tviUsername= (TextView) findViewById(R.id.tviUsername);
         tviUsername.setText("Welcome " + user.getFirstname()+" "+user.getLastname());
     }
 
