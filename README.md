@@ -44,4 +44,4 @@ Ejemplo de como implementar el Patrón MVP ( Model- View - Presenter) en Android
 
 ## Issues
 
-- Cualquier issue, duda o consulta lo puede dejar en este link [https://github.com/emedinaa/android-maven/issues](https://github.com/emedinaa/android-maven/issues) y lo atenderé a la brevedad.
+- Cualquier issue, duda o consulta lo puede dejar en este link [https://github.com/emedinaa/android-mvp/issues](https://github.com/emedinaa/android-mvp/issues) y lo atenderé a la brevedad.
